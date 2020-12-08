@@ -37,13 +37,15 @@ footer {
 header h1 {
     justify-self: center;
     align-self: center;
+    font-size: 3rem;
+    margin: 0px;
 }
 
 #pad {
-    height: 400px;
-    width: 400px;
+    width: 600px;
+    height: 600px;
     justify-self: center;
     align-self: center;
 
-    border: 5px solid hsl(333, 93%, 56%);
+    border: 5px solid var(--main-blue);
 }
