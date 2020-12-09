@@ -1,5 +1,6 @@
 :root {
     --main-blue: hsl(229, 83%, 60%);
+    --grid-dimension: 8;
 }
 
 body {
@@ -42,10 +43,17 @@ header h1 {
 }
 
 #pad {
+    display: grid;
+    grid-template-columns: repeat(var(--grid-dimension), auto);
+
     width: 600px;
     height: 600px;
     justify-self: center;
     align-self: center;
 
     border: 5px solid var(--main-blue);
+}
+
+.draw-div {
+    background-color: black;
 }
