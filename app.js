@@ -1,4 +1,6 @@
 const pad = document.querySelector("#pad");
+const clearButton = document.querySelector("#clear");
+
 let gridDimesion = 16;
 
 function initGrid(dim) {
@@ -13,4 +15,14 @@ function initGrid(dim) {
     }
 }
 
+function clearGrid() {
+    let drawnDivs = pad.querySelectorAll("#draw-div");
+    console.table(drawnDivs);
+    for (let i = 0; i < drawnDivs.length; i++) {
+        drawnDivs[i].classList.remove("draw-div");
+    }
+}
+
 initGrid(gridDimesion);
+
+clearButton.addEventListener("click", clearGrid());
