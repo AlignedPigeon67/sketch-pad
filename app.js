@@ -1,7 +1,7 @@
 const pad = document.querySelector("#pad");
 const clearButton = document.querySelector("#clear");
 
-let gridDimesion = 16;
+let gridDimesion = 50;
 
 function initGrid(dim) {
     for (let i = 0; i < dim; i++) {
@@ -16,13 +16,12 @@ function initGrid(dim) {
 }
 
 function clearGrid() {
-    let drawnDivs = pad.querySelectorAll("#draw-div");
-    console.table(drawnDivs);
-    for (let i = 0; i < drawnDivs.length; i++) {
-        drawnDivs[i].classList.remove("draw-div");
-    }
+    let drawnDivs = document.querySelectorAll(".draw-div");
+    drawnDivs.forEach(e => {
+        e.classList.remove("draw-div");
+    });
 }
 
 initGrid(gridDimesion);
 
-clearButton.addEventListener("click", clearGrid());
+  clearButton.addEventListener("click", clearGrid);

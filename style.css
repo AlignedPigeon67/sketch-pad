@@ -1,6 +1,6 @@
 :root {
     --main-blue: hsl(212, 92%, 49%);
-    --grid-cell-dim: 16;
+    --grid-cell-dim: 50;
     --grid-actual-dim: 600px;
 }
 
