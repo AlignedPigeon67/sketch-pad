@@ -1,7 +1,10 @@
+const root = document.documentElement;
 const pad = document.querySelector("#pad");
+const resizeInput = document.querySelector("#grid-input")
+const resizeButton = document.querySelector("#grid-size");
 const clearButton = document.querySelector("#clear");
 
-let gridDimesion = 50;
+let gridDimension = 32;
 
 function initGrid(dim) {
     for (let i = 0; i < dim; i++) {
@@ -22,6 +25,20 @@ function clearGrid() {
     });
 }
 
-initGrid(gridDimesion);
+function getUserGridInput() {
+    gridDimension = parseInt(resizeInput.value);
+    if (!Number.isInteger(gridDimension)) gridDimension = 16;
+    if (gridDimension < 4 || gridDimension > 100) {
+        alert("Grid input size must be between 4 and 100 inclusive.");
+        return;
+    }
 
-  clearButton.addEventListener("click", clearGrid);
+    clearGrid();
+    root.style.setProperty("--grid-cell-dim", gridDimension);
+    initGrid(gridDimension);
+}
+
+initGrid(gridDimension);
+
+resizeButton.addEventListener("click", getUserGridInput);
+clearButton.addEventListener("click", clearGrid);
